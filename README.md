@@ -1,2 +1,2 @@
 # myReact
- study
+ study React
