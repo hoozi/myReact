@@ -2,6 +2,8 @@
  * 创建React component的两种方法
  * React.createClass 以及 ES6 class Component extends React.Component
  */
+
+
 /*const test = function(){
        return { 
            say() {
@@ -9,8 +11,10 @@
         }
     }
 }
-
-const Component = React.createClass({
+/**
+ * 用React.createClass构造
+ */
+/*const Component = React.createClass({
     mixins:[test()], //抽离公共部分
     getDefaultProps() {
         return {
@@ -24,6 +28,8 @@ const Component = React.createClass({
 
 /**
  * 用ES6构造react Component
+ * @class Component
+ * @extends {React.Component}
  */
 class Component extends React.Component {
     constructor(props) {
