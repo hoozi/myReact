@@ -28,15 +28,12 @@ const Component = React.createClass({
 class Component extends React.Component {
     constructor(props) {
         super(props);
+        this.say = ()=>{
+            alert("Hello "+this.props.value);
+        }
     }
-
-    
-    say() {
-        alert("Hello "+this.props.value)
-    }
-
     render() {
-        return <div onClick={this.say.bind(this)}>Hello {this.props.value}!</div>
+        return <div onClick={this.say}>Hello {this.props.value}!</div>
     }
 }
 Component.defaultProps = {
