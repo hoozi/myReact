@@ -18,23 +18,19 @@ const Item = React.createClass({
         console.log("[run once] initialize state");
         return {
             lastName:"lei",
-            timer: null
+            timer: null,
+            arr:[1,2,3]
         }
     },
     
     //component即将装载 执行一次
     componentWillMount(){
-        console.log("[run once] component will mount");
+        console.log("component will mount");
     },
     //component装载完成 执行一次
     componentDidMount() {
-        console.log("[run once] component did mount");
-        let dom = ReactDOM.findDOMNode(this)
-        ,   isRed = false;
-        this.state.timer = setInterval(()=>{
-            dom.style.backgroundColor = isRed ? "red" : "green";
-            isRed = !isRed;
-        },300)
+        console.log("component did mount");
+       
     },
     
     //component props 将要更新，
@@ -61,12 +57,19 @@ const Item = React.createClass({
     },
 
     update() {
-        //this.setState({lastName:"zi han"});
+        this.state.arr.push(1);
+        this.setState({
+            arr:this.state.arr
+        });
     },
 
     render() {
         console.log("render");
-        return <div onClick={this.update}>Hello {this.props.firstName} {this.state.lastName}!</div>;
+        return <div>{
+            this.state.arr.map((a)=>{
+                return <div>{a}</div>;
+            })
+        }<button onClick={this.update}>update</button></div>;
     },
 
     //component即将卸载
@@ -82,14 +85,11 @@ const Item = React.createClass({
 )*/
 function render(bool) {
     ReactDOM.render(
-        <div>{bool ? <Item firstName="oh"/> : null}</div>,
+        <Item/>,
         document.getElementById("container")
     )
 }
 
 render(true);
 
-document.getElementById("btn").onclick = (e) => {
-    render();
-}
 
