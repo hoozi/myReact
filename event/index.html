@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <script src="../build/react.min.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="//cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+    <style>
+        .left,.right{
+            width:200px;
+            height:300px;
+            float:left;
+        }
+        .left{
+            background-color:#999;
+        }
+        .right{
+            background-color:orange;
+        }
+        .left div,
+        .right div{
+            line-height:25px;
+            text-align:center;
+            width:190px;
+            margin:5px auto;
+            background-color:rgba(225,225,225,0.5);
+            border:1px solid #fff;
+            cursor:move;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<div id="container2"></div>
+<script type="text/babel" src="app2.js"></script> 
+</body>
+</html>
